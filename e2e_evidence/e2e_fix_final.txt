@@ -1,0 +1,20 @@
+### fix set_alarm (int/bool/array/string) stream=False finish_reason=tool_calls
+content: None
+tool_call: set_alarm arguments='{"days": ["mon", "tue"], "enabled": true, "hour": 7, "label": "Wake up"}'  -> valid JSON
+  parsed: {"days": ["mon", "tue"], "enabled": true, "hour": 7, "label": "Wake up"}
+
+### fix set_alarm (int/bool/array/string) stream=True finish_reason=tool_calls
+content: ''
+tool_call: set_alarm arguments='{"days": ["mon", "tue"], "enabled": true, "hour": 7, "label": "Wake up"}'  -> valid JSON
+  parsed: {"days": ["mon", "tue"], "enabled": true, "hour": 7, "label": "Wake up"}
+
+### fix get_weather (two strings) stream=False finish_reason=tool_calls
+content: None
+tool_call: get_weather arguments='{"city": "San Francisco", "unit": "celsius"}'  -> valid JSON
+  parsed: {"city": "San Francisco", "unit": "celsius"}
+
+### fix get_weather (two strings) stream=True finish_reason=tool_calls
+content: ''
+tool_call: get_weather arguments='{"city": "San Francisco", "unit": "celsius"}'  -> valid JSON
+  parsed: {"city": "San Francisco", "unit": "celsius"}
+
